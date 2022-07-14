@@ -1,0 +1,64 @@
+
+.card{
+
+	border: 1px solid silver;
+	margin: auto;
+	margin-top: 20px;
+	width: 40%;
+	padding: 15px;
+	
+	.title{
+
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding:  10px;
+
+	}
+
+	.description{
+		padding: 5px 10px;
+		font-size: 1.2rem;
+
+	}
+
+	
+
+	.author{
+
+		text-align: start;
+		color: silver;
+		
+
+	}
+	
+}
+
+.row{
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px 15px;
+
+
+
+}
+ 
+
+.btn{
+
+	color: white;
+	border: none;
+	font-size: 1.1rem;
+	padding: 5px 20px;
+	border-radius:25px;
+	display: block;
+}
+
+.completed-btn{
+	background-color: #1266F1;
+}
+
+.uncompleted-btn {
+	background-color: #ff4040;	
+}
