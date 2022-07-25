@@ -1,0 +1,104 @@
+.card {
+  border: 1px solid silver;
+  margin: auto;
+  margin-top: 20px;
+  width: 40%;
+  padding: 15px;
+
+  @media (max-width: 750px) {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 10px;
+    width: 90%;
+    word-wrap: break-word;
+  }
+
+  .description {
+    padding: 10px;
+    font-size: 1.2rem;
+
+    @media (max-width: 400px) {
+      margin-top: 15px;
+    }
+  }
+
+  .author {
+    text-align: start;
+    color: silver;
+    @media (max-width: 400px) {
+      text-overflow: ellipsis;
+      margin-top: 10px;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+  .row {
+    width: 45%;
+
+    justify-content: space-between;
+
+    @media (max-width: 400px) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.low {
+  color: green;
+  font-weight: 400;
+}
+
+.middle {
+  color: yellow;
+  font-weight: 500;
+}
+
+.high {
+  color: red;
+  font-weight: 600;
+}
+
+.delete-field {
+  display: flex;
+  justify-content: end;
+}
+
+.data {
+  @media (max-width: 400px) {
+    margin-top: 10px;
+  }
+}
+
+.priority {
+  @media (max-width: 400px) {
+    margin: 10px 0;
+  }
+}
+
+.delete-btn {
+  display: block;
+  color: black;
+  background-color: white;
+  border: none;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 5%;
+}

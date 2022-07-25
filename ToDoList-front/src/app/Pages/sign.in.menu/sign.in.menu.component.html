@@ -1,0 +1,23 @@
+<div style="display: flex; justify-content: center; width: 100vw">
+  <div class="signIn-menu-field">
+    <h2>Sign in</h2>
+
+    <div class="inputs-field">
+      <input type="text" [(ngModel)]="email" placeholder="login..." />
+
+      <input type="password" [(ngModel)]="password" placeholder="password..." />
+
+      <div class="note">
+        Don`t have an account?
+        <a class="link" routerLink="/signin/register">Create</a>
+      </div>
+      <input
+        style="margin-top: 20px"
+        type="button"
+        value="Sign in"
+        (click)="logInClick()"
+        class="btn gray-btn"
+      />
+    </div>
+  </div>
+</div>

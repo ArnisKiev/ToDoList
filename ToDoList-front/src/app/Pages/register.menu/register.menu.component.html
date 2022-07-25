@@ -1,0 +1,29 @@
+<div class="signIn-menu-field">
+  <h2>Registration</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onRegisterClick()" class="inputs-field">
+    <input type="text" formControlName="email" placeholder="email..." />
+
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="password..."
+    />
+    <input
+      type="password"
+      formControlName="confirmPassword"
+      placeholder="confirm password..."
+    />
+
+    <div class="note">
+      Have you already an account?
+      <a class="link" routerLink="/signin">Sign in</a>
+    </div>
+    <input
+      type="submit"
+      value="Create account"
+      style="margin-top: 25px"
+      class="btn gray-btn"
+    />
+  </form>
+</div>

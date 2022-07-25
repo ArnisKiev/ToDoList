@@ -1,0 +1,38 @@
+.filter-field {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 40%;
+  margin-top: 40px;
+  @media (max-width: 400px) {
+    width: 80%;
+  }
+}
+
+.all-task-page {
+  margin: 40px;
+}
+
+input,
+select,
+label {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.2em;
+  padding: 5px 10px;
+
+  @media (max-width: 400px) {
+    text-overflow: ellipsis;
+    margin-top: 10px;
+  }
+}
+
+hr {
+  width: 45%;
+  margin: auto;
+  margin-top: 20px;
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+}

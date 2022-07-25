@@ -1,0 +1,27 @@
+<div class="menu-panel">
+  <div>
+    <h2 class="logo">Home</h2>
+  </div>
+
+  <div class="menu-field">
+    <ul>
+      <li routerLinkActive="active-menu-panel">
+        <a routerLink="/all-tasks">All task</a>
+      </li>
+      <li routerLinkActive="active-menu-panel">
+        <a routerLink="/my-tasks">My tasks</a>
+      </li>
+      <li
+        *ngIf="userStore.authUser === null; else signOutMenu"
+        routerLinkActive="active-menu-panel"
+      >
+        <a routerLink="/signin">Sign in</a>
+      </li>
+      <ng-template #signOutMenu>
+        <li routerLinkActive="active-menu-panel" (click)="signOut()">
+          <a routerLink="/signin">Sign out</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</div>

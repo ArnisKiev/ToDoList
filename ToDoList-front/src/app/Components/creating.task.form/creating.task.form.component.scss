@@ -1,0 +1,68 @@
+select,
+input,
+textarea,
+label {
+  display: block;
+  margin-top: 15px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.input-with-label-field {
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+  justify-content: start;
+  width: 50%;
+
+  @media (max-width: 400px) {
+    width: 75%;
+  }
+
+  @media (max-width: 750px) {
+    width: 90%;
+  }
+
+  label,
+  input,
+  select {
+    margin: 0;
+    margin-right: 10px;
+  }
+}
+
+form {
+  display: grid;
+  margin: auto;
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 25px;
+  justify-items: center;
+  margin-top: 50px;
+  width: 40%;
+
+  @media (max-width: 400px) {
+    width: 85%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 1000px) {
+    width: 75%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 20px;
+  }
+}
+
+.control {
+  width: 50%;
+
+  @media (max-width: 400px) {
+    width: 80%;
+  }
+  @media (max-width: 400px) {
+    width: 70%;
+  }
+}

@@ -1,0 +1,27 @@
+<app-creating-task-form
+  (onCreateTask)="onCreateTask()"
+></app-creating-task-form>
+
+<app-task
+  style="margin-bottom: 20px"
+  *ngFor="let task of tasks"
+  [showDeleteBtn]="true"
+  [task]="task"
+  (onChangeStatus)="onUpdateTask($event)"
+  (onTaskDelete)="onDeleteTask($event)"
+></app-task>
+
+<div class="lds-spinner" *ngIf="isLoading">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>

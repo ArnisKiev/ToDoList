@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="onClickCreate()">
+  <h2>Creating task</h2>
+
+  <input
+    type="text"
+    class="control"
+    placeholder="Title"
+    formControlName="title"
+  />
+  <div class="input-with-label-field">
+    <label for="addControl">Due date:</label>
+    <input type="date" formControlName="dueDate" />
+  </div>
+
+  <div class="input-with-label-field">
+    <label for="addControl">Priority:</label>
+
+    <select class="control" formControlName="priority">
+      <option value="1">Low</option>
+      <option value="2">Middle</option>
+      <option value="3">High</option>
+    </select>
+  </div>
+
+  <div class="input-with-label-field">
+    <input type="checkbox" formControlName="addDescription" id="addControl" />
+    <label for="addControl">Add description</label>
+  </div>
+
+  <textarea
+    formControlName="description"
+    rows="6"
+    *ngIf="form.value.addDescription"
+    class="control"
+  ></textarea>
+
+  <input
+    class="btn gray-btn"
+    style="margin-top: 25px"
+    type="submit"
+    value="Add task"
+  />
+</form>
