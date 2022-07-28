@@ -1,23 +1,42 @@
-<div style="display: flex; justify-content: center; width: 100vw">
-  <div class="signIn-menu-field">
-    <h2>Sign in</h2>
+<form class="signIn-menu-field" [formGroup]="form">
+  <h2>Sign in</h2>
 
-    <div class="inputs-field">
-      <input type="text" [(ngModel)]="email" placeholder="login..." />
-
-      <input type="password" [(ngModel)]="password" placeholder="password..." />
-
-      <div class="note">
-        Don`t have an account?
-        <a class="link" routerLink="/signin/register">Create</a>
-      </div>
-      <input
-        style="margin-top: 20px"
-        type="button"
-        value="Sign in"
-        (click)="logInClick()"
-        class="btn gray-btn"
-      />
+  <div class="inputs-field">
+    <div *ngIf="error != ''" style="width: 100%" class="valid-error">
+      {{ error }}
     </div>
+
+    <input type="text" formControlName="email" placeholder="login..." />
+    <div
+      *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+      class="valid-error"
+    >
+      {{ form.get("email")?.errors | errorValidation }}
+    </div>
+
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="password..."
+    />
+
+    <div
+      *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+      class="valid-error"
+    >
+      {{ form.get("password")?.errors | errorValidation }}
+    </div>
+
+    <div class="note">
+      Don`t have an account?
+      <a class="link" routerLink="/signin/register">Create</a>
+    </div>
+    <input
+      style="margin: auto; margin-top: 20px"
+      type="button"
+      value="Sign in"
+      (click)="logInClick()"
+      class="btn gray-btn"
+    />
   </div>
-</div>
+</form>

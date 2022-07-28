@@ -14,6 +14,8 @@ import { MyTasksComponent } from './Pages/my.tasks/my.tasks.component';
 import { TaskStatusPipe } from './Pipes/task-status.pipe';
 import { PriorityTaskPipe } from './Pipes/priotity-task.pipe';
 import { RegisterMenuComponent } from './Pages/register.menu/register.menu.component';
+import { ErrorValidationPipe } from './Pipes/error.validation.pipe';
+import { CreateduserComponent } from './createduser/createduser.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { RegisterMenuComponent } from './Pages/register.menu/register.menu.compo
     MyTasksComponent,
     TaskStatusPipe,
     PriorityTaskPipe,
+    ErrorValidationPipe,
+    CreateduserComponent,
   ],
   imports: [
     BrowserModule,

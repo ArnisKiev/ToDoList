@@ -1,26 +1,28 @@
-<app-creating-task-form
-  (onCreateTask)="onCreateTask()"
-></app-creating-task-form>
+<div style="padding: 10px">
+  <app-creating-task-form
+    (onCreateTask)="onCreateTask()"
+  ></app-creating-task-form>
 
-<app-task
-  *ngFor="let task of tasks"
-  [showDeleteBtn]="true"
-  [task]="task"
-  (onChangeStatus)="onUpdateTask($event)"
-  (onTaskDelete)="onDeleteTask($event)"
-></app-task>
+  <app-task
+    *ngFor="let task of tasks"
+    [showDeleteBtn]="true"
+    [task]="task"
+    (onChangeStatus)="onUpdateTask($event)"
+    (onTaskDelete)="onDeleteTask($event)"
+  ></app-task>
 
-<div style="margin-top: 25px" class="lds-spinner" *ngIf="isLoading">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  <div style="margin-top: 25px" class="lds-spinner" *ngIf="isLoading">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </div>

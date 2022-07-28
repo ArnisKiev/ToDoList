@@ -7,6 +7,14 @@
     placeholder="Title"
     formControlName="title"
   />
+
+  <div
+    *ngIf="form.get('title')?.invalid && form.get('title')?.touched"
+    class="valid-error"
+  >
+    {{ form.get("title")?.errors | errorValidation }}
+  </div>
+
   <div class="input-with-label-field">
     <label for="addControl">Due date:</label>
     <input type="date" formControlName="dueDate" />

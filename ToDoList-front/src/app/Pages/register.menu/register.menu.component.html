@@ -1,19 +1,47 @@
-<div class="signIn-menu-field">
+<div class="signIn-menu-field" *ngIf="!accountCreated; else Success">
   <h2>Registration</h2>
+
+  <p class="valid-error" style="margin: auto; width: 60%" *ngIf="error != ''">
+    {{ error }}
+  </p>
 
   <form [formGroup]="form" (ngSubmit)="onRegisterClick()" class="inputs-field">
     <input type="text" formControlName="email" placeholder="email..." />
+    <div
+      *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+      class="valid-error"
+    >
+      {{ form.get("email")?.errors | errorValidation }}
+    </div>
 
     <input
       type="password"
       formControlName="password"
       placeholder="password..."
     />
+
+    <div
+      *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+      class="valid-error"
+    >
+      {{ form.get("password")?.errors | errorValidation }}
+    </div>
+
     <input
       type="password"
       formControlName="confirmPassword"
       placeholder="confirm password..."
     />
+
+    <div
+      *ngIf="
+        form.get('confirmPassword')?.invalid &&
+        form.get('confirmPassword')?.touched
+      "
+      class="valid-error"
+    >
+      {{ form.get("confirmPassword")?.errors | errorValidation }}
+    </div>
 
     <div class="note">
       Have you already an account?
@@ -22,8 +50,12 @@
     <input
       type="submit"
       value="Create account"
-      style="margin-top: 25px"
+      style="margin: auto; margin-top: 25px"
       class="btn gray-btn"
     />
   </form>
 </div>
+
+<ng-template #Success>
+  <app-createduser></app-createduser>
+</ng-template>

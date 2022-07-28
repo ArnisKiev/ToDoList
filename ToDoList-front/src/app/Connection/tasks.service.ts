@@ -35,11 +35,25 @@ export class TasksService {
   }
 
   deleteTask(task: TaskModel) {
-    return this.http.delete(this.url, { body: task });
+    const jwt = localStorage.getItem('jwt');
+    return this.http.delete(this.url, {
+      body: task,
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   updateTask(task: TaskModel) {
-    return this.http.put(this.url, task);
+    const jwt = localStorage.getItem('jwt');
+
+    return this.http.put(this.url, task, {
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   getTasksByUserEmail(email: string) {

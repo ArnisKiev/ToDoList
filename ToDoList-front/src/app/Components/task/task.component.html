@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="row" style="display: flex">
+  <div class="row">
     <div class="title">{{ task.title }}</div>
     <button *ngIf="showDeleteBtn" (click)="onClickDelete()" class="delete-btn">
       &times;
@@ -10,14 +10,14 @@
     {{ task.description }}
   </div>
 
-  <div class="row">
-    <div class="row">
+  <div class="card__pair-controls">
+    <div class="card__pair-controls">
       <div class="author">{{ task.author }}</div>
 
       <div class="data">{{ task.dueDate | date }}</div>
     </div>
 
-    <div class="row">
+    <div class="card__pair-controls">
       <div
         class="priority"
         [class.low]="task.priority == 1"
@@ -30,7 +30,7 @@
       <button
         (click)="onClickChangeStatus()"
         type="button"
-        class="btn"
+        class="btn card__btn"
         [class.blue-btn]="task.isDone"
         [class.red-btn]="!task.isDone"
       >

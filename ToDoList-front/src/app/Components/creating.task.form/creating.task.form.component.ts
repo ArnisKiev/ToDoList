@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TasksService } from '../../Connection/tasks.service';
 import { TaskModel } from '../../Models/task.model';
@@ -8,7 +8,10 @@ import { UserStoreService } from '../../Services/user-store.service';
 @Component({
   selector: 'app-creating-task-form',
   templateUrl: './creating.task.form.component.html',
-  styleUrls: ['./creating.task.form.component.scss'],
+  styleUrls: [
+    './creating.task.form.component.scss',
+    '../../Styles/controls.scss',
+  ],
 })
 export class CreatingTaskFormComponent implements OnInit {
   addDescription: boolean = false;
@@ -23,7 +26,7 @@ export class CreatingTaskFormComponent implements OnInit {
     private taskService: TasksService
   ) {
     this.form = new FormGroup({
-      title: new FormControl(),
+      title: new FormControl('', Validators.required),
       dueDate: new FormControl(),
       priority: new FormControl(1),
       addDescription: new FormControl(false),

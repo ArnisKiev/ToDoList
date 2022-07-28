@@ -2,8 +2,16 @@
   border: 1px solid silver;
   margin: auto;
   margin-top: 20px;
-  width: 40%;
+  width: 50%;
   padding: 15px;
+
+  @media (max-width: 1200px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 70%;
+  }
 
   @media (max-width: 750px) {
     width: 90%;
@@ -14,26 +22,39 @@
   .title {
     font-size: 1.4rem;
     font-weight: 700;
-    padding: 10px;
+
     width: 90%;
     word-wrap: break-word;
   }
 
   .description {
-    padding: 10px;
     font-size: 1.2rem;
-
-    @media (max-width: 400px) {
-      margin-top: 15px;
-    }
+    margin-top: 15px;
   }
 
   .author {
-    text-align: start;
     color: silver;
-    @media (max-width: 400px) {
-      text-overflow: ellipsis;
-      margin-top: 10px;
+    margin-top: 15px;
+    text-overflow: ellipsis;
+  }
+
+  .card__pair-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 15px;
+
+    .card__pair-controls {
+      width: 45%;
+      align-items: baseline;
+      margin-top: 0;
+    }
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      display: block;
     }
   }
 }
@@ -43,22 +64,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-
-  .row {
-    width: 45%;
-
-    justify-content: space-between;
-
-    @media (max-width: 400px) {
-      display: block;
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 400px) {
-    display: block;
-    width: 100%;
-  }
 }
 
 .low {
@@ -82,15 +87,20 @@
 }
 
 .data {
+  margin-top: 15px;
   @media (max-width: 400px) {
     margin-top: 10px;
   }
 }
 
-.priority {
-  @media (max-width: 400px) {
-    margin: 10px 0;
+.card__btn {
+  @media (max-width: 800px) {
+    margin-top: 25px;
   }
+}
+
+.priority {
+  margin-top: 15px;
 }
 
 .delete-btn {

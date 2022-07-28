@@ -4,6 +4,11 @@ import { Injectable } from '@angular/core';
 import { NEVER, Observable } from 'rxjs';
 import { User } from '../Models/user.model';
 
+interface loginResponse {
+  access_token: string;
+  user: User;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,7 +18,7 @@ export class AuthService {
 
   logIn(email: string, password: string) {
     let url = this.url + '/logIn';
-    return this.http.post<User>(url, {
+    return this.http.post<loginResponse>(url, {
       email,
       password,
     });

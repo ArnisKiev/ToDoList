@@ -10,7 +10,7 @@ label {
 
 .input-with-label-field {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   margin-top: 15px;
   justify-content: start;
   width: 50%;
@@ -44,7 +44,7 @@ form {
   @media (max-width: 400px) {
     width: 85%;
     margin: auto;
-    padding: 10px;
+
     margin-top: 20px;
   }
 
@@ -58,6 +58,7 @@ form {
 
 .control {
   width: 50%;
+  margin: auto;
 
   @media (max-width: 400px) {
     width: 80%;

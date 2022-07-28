@@ -30,6 +30,9 @@ export class MyTasksComponent implements OnInit {
 
   loadTasks() {
     let email = this.userStore.authUser?.email;
+
+    console.log(email);
+
     if (email == undefined) {
       email = '';
     }
